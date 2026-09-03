@@ -23,4 +23,15 @@ app.get('/api/test', async (req, res) => {
   }
 });
 
+app.get('/api/menu', async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db('himalayan_kitchen');
+    const items = await db.collection('menuItems').find({}).toArray();
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = app;

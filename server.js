@@ -29,3 +29,19 @@ app.get('/api/test', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+// new route here
+app.get('/api/menu', async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db('himalayan_kitchen');
+    const items = await db.collection('menuItems').find({}).toArray();
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
