@@ -44,6 +44,31 @@
     </div>
   </section>
 
+  <section class="reserve-section" id="reserve">
+    <h2>Reserve a Table</h2>
+    <p>Book your table at Himalayan Kitchen</p>
+
+    <form id="reservation-form" class="reservation-form">
+      <div class="form-row">
+        <input type="text" id="name" name="name" placeholder="Full Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        <input type="number" id="partySize" name="partySize" placeholder="Party Size" min="1" max="20" required>
+      </div>
+      <div class="form-row">
+        <input type="date" id="date" name="date" required>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <textarea id="message" name="message" placeholder="Special requests (optional)" rows="3"></textarea>
+
+      <button type="submit" class="btn" id="submit-btn">Reserve Now</button>
+
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </section>
+
   <footer>
     <p>&copy; 2026 Himalayan Kitchen. All rights reserved.</p>
     <p class="footer-location">123 Everest Lane, Jackson Heights, NY 11372 · (555) 123-4567</p>
