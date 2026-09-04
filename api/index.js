@@ -80,4 +80,18 @@ app.post('/api/reservations', async (req, res) => {
   }
 });
 
+app.get('/api/reservations', async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db('himalayan_kitchen');
+    const reservations = await db.collection('reservations')
+      .find({})
+      .sort({ createdAt: -1 })
+      .toArray();
+    res.json(reservations);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = app;

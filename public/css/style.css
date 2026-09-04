@@ -407,3 +407,46 @@ footer .footer-location {
     flex-direction: column;
   }
 }
+
+/* Admin page */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-container h1 {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.admin-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
